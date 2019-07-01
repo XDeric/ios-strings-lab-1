@@ -15,28 +15,80 @@ Write code that prints out all the numbers from 1 to 10 as a single string.
 (Hint: the `String()` function can convert an Int to a String)
 
 ***
+```
+var num = 10
+var i = 0
+
+while i < num  {
+i += 1
+print("This a string now", String(i))
+}
+```
 ## Question 2
 
 Write code that prints out all the even numbers from 5 to 51 as a single string.
 
 ***
+```
+var num = 52
+var i = 4
+//var line = String()
+var line = "All the numbers are even "
+
+while i < num  {
+i += 1
+if i % 2 == 0 {
+
+line.append("\(i)" + " ")
+
+}
+
+}
+print("\(line)")
+```
 ## Question 3
 
 Write code that prints out every number ending in 4 between 1 and 60 as a single string.
 
 ***
+```
+var num = 61
+var i = 0
+//var line = String()
+var line = "All the numbers are even "
+
+while i < num  {
+i += 1
+if i % 10 == 4 {
+
+line.append("\(i)" + " ")
+
+}
+
+}
+print("\(line)")
+```
 ## Question 4
 
 Print each character in the string `"Hello world!"`
 
 ***
+```
+for c in "Hellow World!"{
+print(c)
+}
+```
 ## Question 5
 
 Print out the last character in the string below.  You cannot use the Character literal "!" (i.e you must access `myStringSeven`'s characters).
 
-`let myStringSeven = "Hello world!"`
+`var myStringSeven = "Hello world!"`
 
 ***
+```
+var myStringSeven = "Hello world!
+print(myStringSeven.removeLast())
+```
 ## Question 6
 
 Write code that switches on a string, given the following conditions:
@@ -44,29 +96,75 @@ Write code that switches on a string, given the following conditions:
 - If the string's length is odd, print out every other character.
 
 ***
+
+```
+var strings = "Test run"
+var stringL = strings.count
+var empty = 0
+
+
+if stringL % 2 == 0{
+print(strings)
+}
+else {
+for i in strings{
+if empty % 2 == 0 {
+print(i)
+}
+empty += 1
+}
+}
+```
 ## Question 7
 
 Initialize a String with a character. Show that it is a Character, and not another String, that you're using to initialize it.
 
+```
+var newString: String = "A"
+var string = Character(newString)
+print(string)
+```
+
 ***
+
 ## Question 8
 
 Build five pairs of **canonically equivalent** strings, the first of each being a pre-composed character and the second being one that uses combinable unicode scalars. Show that they are equivalent.
 
+```
+var test1 = "Test!"
+var test2 = "T\u{0065}st!"
+var test3 = "Te\u{0073}t!"
+var test4 = "Tes\u{0074}!"
+var test5 = "Test\u{0021}"
+
+if test1 == test2 && test1 == test3 && test1 == test4 && test1 == test5{
+print("True")
+}
+
+```
 ***
 ## Question 9
 
 **Using only Unicode**, print out `"HELLO WORLD!"`
-
+```
+print("\u{0022}\u{0048}\u{0045}\u{004c}\u{004c}\u{004f}\u{0020}\u{0057}\u{004f}\u{0052}\u{004c}\u{0044}\u{0021}\u{0022}\u{0020}")
+```
 ***
 ## Question 10
 
 **Using only Unicode**, print out your name.
 
+```
+print("\u{0045}\u{0072}\u{0069}\u{0063}\u{0020}\u{004d}\u{0065}\u{0069}")
+```
 ***
 ## Question 11
 
 **Using only Unicode**, print out `"HELLO WORLD!"` in another language.
+```
+print("\u{004f60}\u{00597d}\u{00ff0c}\u{004e16}\u{00754c}")
+```
 
 ***
 ## Question 12
@@ -117,6 +215,11 @@ You are given a string stored in the variable `aString`. Create new string named
 var aString = "Replace the letter e with \*"
 // Your code here
  ```
+```
+let string = "replacedString"
+let newString = string.replacingOccurrences(of: "e", with: "*")
+print(newString)
+```
 
 Example:
 
@@ -137,6 +240,10 @@ var reverse = ""
 
 // Your code here
 ```
+```
+var myString = "NEED FOOD"
+print(String(myString.reversed()))
+```
 
 Example:
 Input:
@@ -154,6 +261,14 @@ You are given a string stored in variable `aString`. Print `true` if `aString` i
 let aString = "anutforajaroftuna"
 
 // Your code here
+```
+```
+var aString = "RATS STAR"
+var test = (String(aString.reversed()))
+
+if test == aString{
+print("true")
+}
 ```
 
 Example 1:
@@ -179,6 +294,11 @@ You are given a string stored in variable `problem`. Write code so that you prin
 var problem = "split this string into words and print them on separate lines"
 
 // Your code
+```
+```
+var problem = "split this string into words and print them on separate lines"
+var seperate = problem.components(separatedBy: (" "))
+print(seperate)
 ```
 
 Example:
