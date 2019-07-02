@@ -188,6 +188,20 @@ Flower Box:
 | ⚘ | ⚘ | ⚘ | ⚘ | ⚘ |
 - - - - - - - - - - -
 ```
+```
+var flower = "\u{2698}"
+var dash = "\u{002d} "
+var bar = "\u{007c}"
+let line = String(repeating: dash, count: 11)
+
+print(line)
+for _ in 1...7{
+    for _ in 1...5{
+        print("\(bar) \(flower)", terminator : " " )
+    }
+}
+print(line)
+```
 
 ***
 ## Question 13
@@ -205,6 +219,23 @@ Chess Board:
 ♟ ♟ ♟ ♟ ♟ ♟ ♟ ♟
 ♜ ♞ ♝ ♛ ♚ ♝ ♞ ♜
 ```
+```
+var whiteBack = "\u{002656}\u{0020}\u{002658}\u{0020}\u{002657}\u{0020}\u{002655}\u{0020}\u{002654}\u{0020}\u{002657}\u{0020}\u{002658}\u{0020}\u{002656}"
+var whitePawn = "\u{0020}\u{002659}"
+
+
+var blackPawn = "\u{00265f}\u{0020}"
+var blackBack = "\u{0020}\u{00265c}\u{0020}\u{00265e}\u{0020}\u{00265d}\u{0020}\u{00265b}\u{0020}\u{00265a}\u{0020}\u{00265d}\u{0020}\u{00265e}\u{0020}\u{00265c}"
+let repeatW = String(repeating: whitePawn, count: 8)
+let repeatB = String(repeating: blackPawn , count: 8)
+print(whiteBack)
+print(repeatW)
+print("")
+print("")
+print(repeatB)
+print(blackBack)
+```
+
 
 ***
 ## Question 14
@@ -330,6 +361,13 @@ var problem = "find the longest word in the problem description"
 
 // Your code here
 ```
+```
+var problem = "find the longest word in the problem description"
+var seperate = problem.components(separatedBy: (" "))
+if let max = seperate.max(by: {$1.count > $0.count}) {
+print(max)
+}
+```
 
 Example:
 Input:
@@ -350,6 +388,31 @@ let vowels = "aeiou"
 let consonants = "bcdfghjklmnpqrstvwxyz"
 let input = "Count how many vowels I have!"
 ```
+```
+let vowels = "aeiou"
+let consonants = "bcdfghjklmnpqrstvwxyz"
+
+let input = "Count how many vowels I have!"
+var v = 0
+var c = 0
+
+for i in input.lowercased() {
+for y in vowels{
+if i == y {
+v += 1
+}
+}
+}
+print("vowels  \(v)")
+for j in input.lowercased(){
+for x in consonants{
+if j == x {
+c += 1
+}
+}
+}
+print("consonants \(c)")
+```
 
 ***
 ## Question 20
@@ -364,3 +427,15 @@ Input: `"How are you doing this Monday?"`
 Output: `7`
 
 ***
+```
+var problem = "Length of the last word "
+var seperate = problem.components(separatedBy: (" "))
+var lastOne = seperate.last
+var lengthOfLast = lastOne!.count
+if lengthOfLast == 0{
+print("No Last Word")
+}
+else{
+print(lengthOfLast)
+}
+```
